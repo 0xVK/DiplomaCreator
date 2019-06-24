@@ -62,7 +62,6 @@ def fill_group_data(user=None, dip_type=''):
         stupin = dict(ua='бакалавр', en='Bachelor\'s')
 
     # Ua info
-
     # Рік закінчення
     group_data['GraduateYear'] = datetime.datetime.strptime(user_data.get('CreateDate'), '%d.%m.%Y %H:%M:%S').year
     # Назва університету
@@ -99,9 +98,6 @@ def fill_group_data(user=None, dip_type=''):
                                                               datetime_object.year)
 
     # En info
-
-    # Спеціальність
-
     # Назва університету
     group_data['UniversityNameEn'] = user_data.get('UniversityNameEn')
     # Освітня програма
@@ -148,8 +144,6 @@ def check():
     if request.method != 'POST':
         return 'Bad request type. '
 
-    # is_specialization = True if request.form.get('group-spec') == 'specialization' else False
-
     xml_file = request.files.get('xml-file')
 
     if not xml_file:
@@ -160,7 +154,6 @@ def check():
 
     # Дані про всіх студентів групи
     users = read_users_data_from_xml(filename)
-    print(users)
     study_group_name = users[0].get('StudyGroupName', 'невідома група')
 
     awards_count = 0
@@ -229,5 +222,4 @@ def delete(filename):
 
 
 if __name__ == '__main__':
-    #app.run(host='0.0.0.0', debug=True)
     app.run(debug=True)
