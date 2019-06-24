@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+
+{% block title %}Перевірка{% endblock %}
+
+
+{% block content %}
+
+<a class="btn btn-warning" href="/" role="button">Назад</a><br><br>
+
+<h3>Крок 2</h3>
+<br>
+<h4>Перевірка результату</h4><br>
+<h6><b>Кількість студентів:</b> {{ data.users_count }}</h6>
+<h6><b>Кількість студентів із відзнакою:</b> {{ data.awards_count }}</h6><br>
+
+<form class="check-dipl-form" action="/create_diplomas" method="post">
+ <input type="hidden" name="file-name" value="{{ data.file_name }}">
+ <input type="hidden" name="dip-type" value="{{ data.dip_type }}">
+ <input type="hidden" class="form-control" id="StupinEn" value="{{ data.group_data.StupinEn }}" name="StupinEn">
+ <input type="hidden" class="form-control" id="Stupin" value="{{ data.group_data.Stupin }}" name="Stupin">
+ <div class="row">
+   <div class="col-sm">
+      <div class="form-group">  
+        <label for="YearInput">Рік закінчення</label>
+        <input type="text" class="form-control" id="YearInput" value="{{ data.group_data.GraduateYear }}" name="GraduateYear">
+      </div>
+<!--
+      <div class="form-group">  
+        <label for="StupinValue">Ступінь вищої освіти</label>
+        <input type="text" class="form-control" id="StupinValue" value="{{ data.group_data.Stupin }}" name="Stupin">
+      </div>
+-->
+     {% if data.dip_type == 'type-1' or data.dip_type == 'type-2' %}
+      <div class="form-group">  
+        <label for="NapramValue">Напрям підготовки</label>
+        <input type="text" class="form-control" id="NapramValue" value="{{ data.group_data.NapramPidg }}" name="NapramPidg">
+      </div>
+      {% endif %}
+      {% if data.dip_type == 'type-3' or data.dip_type == 'type-4' or data.dip_type == 'type-5' or data.dip_type == 'type-6' %}
+      <div class="form-group">  
+        <label for="SpecialityNameInput">Спеціальність</label>
+        <input type="text" class="form-control" id="SpecialityNameInput" value="{{ data.group_data.SpecialityName }}" name="SpecialityName">
+      </div>
+      {% endif %}
+      {% if data.dip_type == 'type-2' or data.dip_type == 'type-4' or data.dip_type == 'type-6' %}
+      <div class="form-group">  
+        <label for="SpecializationNameInput">Спеціалізація</label>
+        <input type="text" class="form-control" id="SpecializationNameInput" value="{{ data.group_data.SpecializationName }}" name="SpecializationName">
+      </div>
+      {% endif %}
+      {% if data.dip_type == 'type-3' or data.dip_type == 'type-4' or data.dip_type == 'type-5' or data.dip_type == 'type-6' %}
+      <div class="form-group">  
+        <label for="OsvitProgInput">Освітня програма</label>
+        <input type="text" class="form-control" id="OsvitProgInput" value="{{ data.group_data.StudyProgramName }}" name="StudyProgramName">
+      </div>
+      {% endif %}
+     <div class="form-group">
+        <label for="QualificationName">Професійна кваліфікація</label>
+        <textarea class="form-control" id="QualificationName" rows="3" name="QualificationName">{{ data.group_data.QualificationName }}</textarea>
+    </div>
+    <div class="form-group">
+        <label for="GraduateDateStrID">Дата випуску</label>
+        <input type="text" class="form-control" id="GraduateDateStrID" value="{{ data.group_data.GraduateDateStr }}" name="GraduateDateStr">
+    </div>
+      <!--<div class="form-group">  -->
+        <!--<label for="BossPostInput">Посада керівника</label>-->
+        <!--<input type="text" class="form-control" id="BossPostInput" value="{{ data.group_data.BossPost }}" name="BossPost">-->
+      <!--</div>-->
+      <!--<div class="form-group">  -->
+        <!--<label for="BossFIOInput">Прізвище та ініціали</label>-->
+        <!--<input type="text" class="form-control" id="BossFIOInput" value="{{ data.group_data.BossFIO }}" name="BossFIO">-->
+      <!--</div>-->
+  </div>
+  
+     <div class="col-sm">  
+          <div class="form-group">  
+            <label for="YearInputEn">Рік закінчення</label>
+            <input type="text" class="form-control" id="YearInputEn" value="{{ data.group_data.GraduateYear }}" readonly name="GraduateYear">
+          </div>
+<!--
+          <div class="form-group">  
+            <label for="StupinValueEn">Ступінь вищої освіти</label>
+            <input type="text" class="form-control" id="StupinEn" value="{{ data.group_data.StupinEn }}" name="StupinEn">
+          </div>
+-->
+         {% if data.dip_type == 'type-1' or data.dip_type == 'type-2' %}
+          <div class="form-group">  
+            <label for="NapramValueEn">Напрям підготовки</label>
+            <input type="text" class="form-control" id="NapramValueEn" value="{{ data.group_data.NapramPidgEn }}" name="NapramPidgEn">
+          </div>
+          {% endif %}
+          {% if data.dip_type == 'type-3' or data.dip_type == 'type-4' or data.dip_type == 'type-5' or data.dip_type == 'type-6' %}
+          <div class="form-group">  
+            <label for="SpecialityNameInputEn">Спеціальність</label>
+            <input type="text" class="form-control" id="SpecialityNameInputEn" value="{{ data.group_data.SpecialityNameEn }}" name="SpecialityNameEn">
+          </div>
+          {% endif %}
+          {% if data.dip_type == 'type-2' or data.dip_type == 'type-4' or data.dip_type == 'type-6' %}
+          <div class="form-group">  
+            <label for="SpecializationNameInputEn">Спеціалізація</label>
+            <input type="text" class="form-control" id="SpecializationNameInputEn" value="{{ data.group_data.SpecializationNameEn }}" name="SpecializationNameEn">
+          </div>
+          {% endif %}
+          {% if data.dip_type == 'type-3' or data.dip_type == 'type-4' or data.dip_type == 'type-5' or data.dip_type == 'type-6' %}
+          <div class="form-group">  
+            <label for="OsvitProgInputEn">Освітня програма</label>
+            <input type="text" class="form-control" id="OsvitProgInputEn" value="{{ data.group_data.StudyProgramNameEn }}" name="StudyProgramNameEn">
+          </div>
+          {% endif %}
+          <div class="form-group">
+             <label for="QualificationNameEn">Професійна кваліфікація</label>
+             <textarea class="form-control" id="QualificationNameEn" rows="3" name="QualificationNameEn">{{ data.group_data.QualificationNameEn }}</textarea>
+          </div>
+          <!--<div class="form-group">  -->
+            <!--<label for="BossPostInputEn">Посада керівника</label>-->
+            <!--<input type="text" class="form-control" id="BossPostInputEn" value="{{ data.group_data.BossPostEn }}" name="BossPostEn">-->
+          <!--</div>-->
+          <!--<div class="form-group">  -->
+            <!--<label for="BossFIOInputEn">Прізвище та ініціали</label>-->
+            <!--<input type="text" class="form-control" id="BossFIOInputEn" value="{{ data.group_data.BossFIOEn }}" name="BossFIOEn">-->
+          <!--</div>-->
+         <div class="form-group">
+            <label for="study_group_name">Назва групи</label>
+         <input type="text" class="form-control" id="GraduateDateStrID" value="{{ data.study_group_name }}" name="study_group_name">
+    </div>
+     </div>
+     
+ </div>
+ 
+<br><br>
+<button type="submit" class="btn btn-primary">Все правильно</button>
+<br><br>
+ 
+</form>
+
+{% endblock %}

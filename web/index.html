@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Друк дипломів{% endblock %}
+
+
+{% block content %}
+
+<h3>Крок 1</h3>
+<br>
+<h4>Формування задачі</h4><br>
+
+<form action="/check" method="post" enctype="multipart/form-data" class="main-form">
+    <label for="xmlFileInput">Тип диплому:</label>
+  <div class="form-check">
+    <input class="form-check-input position-static" type="radio" id="type-1" name="dip-type" value="type-1" checked>
+    <label class="form-check-label" for="type-1">Бакалавр 6</label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input position-static" type="radio" id="type-2" name="dip-type" value="type-2">
+    <label class="form-check-label" for="type-2">Бакалавр 6 із спеціалізацією</label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input position-static" type="radio" id="type-3" name="dip-type" value="type-3">
+    <label class="form-check-label" for="type-3">Бакалавр</label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input position-static" type="radio" id="type-4" name="dip-type" value="type-4">
+    <label class="form-check-label" for="type-4">Бакалавр із спеціалізацією</label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input position-static" type="radio" id="type-5" name="dip-type" value="type-5">
+    <label class="form-check-label" for="type-5">Магістр</label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input position-static" type="radio" id="type-6" name="dip-type" value="type-6">
+    <label class="form-check-label" for="type-6">Магістр із спеціалізацією</label>
+  </div>
+  <br>
+  <div class="form-group">
+    <label for="xmlFileInput">XML файл:</label>
+    <input type="file" class="form-control-file" id="xmlFileInput" accept="text/xml" name="xml-file" required>
+  </div>
+  
+  <button type="submit" class="btn btn-success">Вперед</button>
+</form>
+
+{% endblock %}

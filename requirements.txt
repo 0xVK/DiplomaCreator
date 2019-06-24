@@ -1,0 +1,3 @@
+docxtpl
+xmltodict
+flask

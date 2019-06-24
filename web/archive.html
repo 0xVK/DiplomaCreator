@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Архів{% endblock %}
+
+
+{% block content %}
+
+<h4>Список згенерованих дипломів</h4>
+<br>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Файл</th>
+      <th scope="col">Видалити</th>
+    </tr>
+  </thead>
+  <tbody>
+      {% for file in files %}
+    <tr>
+      <th scope="row"><a href="/get/{{ file }}">{{ file }}</a></th>
+      <td><a href="/delete/{{ file }}">Видалити файл</a></td>
+    </tr>
+      {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
