@@ -17,7 +17,8 @@ def create_diploma_for_user(group_folder, user=None, diploma_type=None):
     # SexID 1 boy, 2 girl
     end_str = 'закінчила у {} році' if user.get('SexId') == '2' else 'закінчив у {} році'
 
-    user['zakinchyv'] = end_str.format(user.get('GraduateYear'))
+    year_of_issue_date = datetime.datetime.strptime(user.get('IssueDate'), '%d.%m.%Y %H:%M:%S').year
+    user['zakinchyv'] = end_str.format(year_of_issue_date)
 
     user['zdobuv'] = 'здобула' if user.get('SexId') == '2' else 'здобув'
 
@@ -63,7 +64,7 @@ def fill_group_data(user=None, dip_type=''):
 
     # Ua info
     # Рік закінчення
-    group_data['GraduateYear'] = datetime.datetime.strptime(user_data.get('CreateDate'), '%d.%m.%Y %H:%M:%S').year
+    group_data['IssueYear'] = datetime.datetime.strptime(user_data.get('IssueDate'), '%d.%m.%Y %H:%M:%S').year
     # Назва університету
     group_data['UniversityName'] = user_data.get('UniversityName')
     # Освітня програма
@@ -222,4 +223,4 @@ def delete(filename):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)
