@@ -1,14 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4693f7cb-5cfc-4aa3-839c-1365c3ec71f5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="ee5b8e94-3b53-41ad-838b-2df8d0ed8102" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/generated/М19_012_Д.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generated/М19_013_Д.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generated/М19_014.01_Д.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generated/М19_014.02(а,н)_Д.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generated/М19_014.02(а,ф)_Д.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generated/М19_014.02(р)_Д.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generated/М19_014.03_Д.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generated/М19_014.04_Д.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generated/М19_014.05_Д.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generated/М19_014.06_Д.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generated/М19_014.08_Д.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generated/М19_014.09_Д.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generated/М19_014.11_Д.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generated/М19_014.13_Д.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generated/М19_017_Д.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generated/М19_032_Д.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generated/М19_035.041_Д.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generated/М19_051_Д.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generated/М19_061_Д.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generated/М19_102_Д.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generated/М19_104_Д.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generated/М19_111_Д.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generated/М19_231_Д.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tmp/109-08-20191218-160758.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/DiplomaCreator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DiplomaCreator.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/1.docx" beforeDir="false" afterPath="$PROJECT_DIR$/templates/1.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/2.docx" beforeDir="false" afterPath="$PROJECT_DIR$/templates/2.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/3.docx" beforeDir="false" afterPath="$PROJECT_DIR$/templates/3.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/4.docx" beforeDir="false" afterPath="$PROJECT_DIR$/templates/4.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.directory" beforeDir="false" afterPath="$PROJECT_DIR$/web/.directory" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/archive.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/archive.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/check.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/check.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/bootstrap-grid.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/bootstrap-grid.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/bootstrap-grid.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/bootstrap-grid.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/bootstrap-grid.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/bootstrap-grid.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/bootstrap-reboot.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/bootstrap-reboot.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/bootstrap-reboot.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/bootstrap-reboot.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/bootstrap.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/bootstrap.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/bootstrap.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/js/bootstrap.bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/js/bootstrap.bundle.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/js/bootstrap.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/bootstrap.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/js/bootstrap.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/bootstrap.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/js/jquery-3.3.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/jquery-3.3.1.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/js/popper.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/popper.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/report.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,5 +134,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
 </project>

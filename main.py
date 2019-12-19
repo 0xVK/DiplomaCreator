@@ -3,7 +3,7 @@ from docxtpl import DocxTemplate
 import xmltodict
 import datetime
 import shutil
-from flask import Flask, request, render_template, send_file, redirect
+from flask import Flask, request, render_template, send_file, redirect, make_response
 import config
 
 app = Flask(__name__, template_folder='web', static_folder='web', static_url_path='/static')
@@ -74,8 +74,10 @@ def fill_group_data(user=None, dip_type=''):
     # Ступінь вищої освіти
     group_data['Stupin'] = stupin.get('ua')
     # Спеціальність
-    group_data['SpecialityName'] = user_data.get('StudyGroupName', '') + ' ' + \
-                                   user_data.get('SpecialityName', '')
+    study_group_name = user_data.get('StudyGroupName', '')
+    if '.' in study_group_name:
+        study_group_name = study_group_name.split('.')[0]
+    group_data['SpecialityName'] = study_group_name + ' ' + user_data.get('SpecialityName', '')
     # Спеціалізація
     if dip_type in ('type-2',):
         group_data['SpecializationName'] = user_data.get('SpecializationName', '')
@@ -108,8 +110,10 @@ def fill_group_data(user=None, dip_type=''):
     # Ступінь вищої освіти
     group_data['StupinEn'] = stupin.get('en')
     # Спеціальність
-    group_data['SpecialityNameEn'] = user_data.get('StudyGroupName', '') + ' ' + \
-                                     user_data.get('SpecialityNameEn', '')
+    study_group_name = user_data.get('StudyGroupName', '')
+    if '.' in study_group_name:
+        study_group_name = study_group_name.split('.')[0]
+    group_data['SpecialityNameEn'] = study_group_name + ' ' + user_data.get('SpecialityNameEn', '')
     # Спеціалізація
     if dip_type in ('type-2',):
         group_data['SpecializationNameEn'] = user_data.get('SpecializationNameEn', '')
@@ -130,7 +134,10 @@ def fill_group_data(user=None, dip_type=''):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+
+    dip_type = request.cookies.get('dip-type')
+
+    return render_template('index.html', data=dict(dip_type=dip_type))
 
 
 @app.route('/archive')
@@ -175,7 +182,10 @@ def check():
         'study_group_name': study_group_name,
     }
 
-    return render_template('check.html', data=data)
+    resp = make_response(render_template('check.html', data=data))
+    resp.set_cookie('dip-type', request.form.get('dip-type'))
+
+    return resp
 
 
 @app.route('/create_diplomas', methods=["POST", "GET"])
