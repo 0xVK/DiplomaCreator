@@ -5,14 +5,13 @@
 
 {% block content %}
 
-<h3>Крок 1</h3>
-<br>
+
 <h4>Формування задачі</h4><br>
 
 <form action="/check" method="post" enctype="multipart/form-data" class="main-form">
     <label for="xmlFileInput">Тип диплому:</label>
   <div class="form-check">
-    <input class="form-check-input position-static" type="radio" id="type-1" name="dip-type" value="type-1" {%  if data.dip_type == 'type-1' %}checked {% endif %}>
+    <input class="form-check-input position-static" type="radio" id="type-1" name="dip-type" value="type-1" {%  if data.dip_type == 'type-1' %}checked {% endif %} required>
     <label class="form-check-label" for="type-1">Бакалавр 6</label>
   </div>
   <div class="form-check">
@@ -38,7 +37,7 @@
   <br>
   <div class="form-group">
     <label for="xmlFileInput">XML файл:</label>
-    <input type="file" class="form-control-file" id="xmlFileInput" accept="text/xml" name="xml-file" required>
+    <input type="file" class="form-control-file" id="xmlFileInput" accept=".xml" name="xml-file" required>
   </div>
   
   <button type="submit" class="btn btn-success">Вперед</button>
