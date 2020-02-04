@@ -203,9 +203,6 @@ def create_diplomas():
 
     full_folder_name = os.path.join('generated', folder_name)
 
-    if not os.path.exists(full_folder_name):
-        os.mkdir(full_folder_name)
-
     for user in users:
         user.update(group_data)
         create_diploma_for_user(full_folder_name, dict(user), diploma_type)
@@ -235,4 +232,8 @@ def delete(filename):
 
 
 if __name__ == '__main__':
+
+    os.makedirs('tmp', exist_ok=True)
+    os.makedirs('generated', exist_ok=True)
+
     app.run(host='0.0.0.0', debug=True)
