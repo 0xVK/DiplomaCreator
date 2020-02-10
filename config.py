@@ -7,6 +7,7 @@ diploma_types = {
     'type-4': os.path.join('templates', '4.docx'),
     'type-5': os.path.join('templates', '3.docx'),
     'type-6': os.path.join('templates', '4.docx'),
+    'type-7': os.path.join('templates', '5.docx'),
 }
 
 month = {

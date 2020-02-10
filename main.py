@@ -11,10 +11,12 @@ import config
 app = Flask(__name__, template_folder='web', static_folder='web', static_url_path='/static')
 
 
-def create_diploma_for_user(group_folder, user=None, diploma_type=None):
+def create_diploma_for_user(group_folder, user=None, diploma_type=None, duplicate=False):
 
     if user is None:
         user = {}
+
+    user['duplicate'] = duplicate
 
     # SexID 1 boy, 2 girl
     end_str = 'закінчила у {} році' if user.get('SexId') == '2' else 'закінчив у {} році'
@@ -91,8 +93,7 @@ def fill_group_data(user=None, dip_type=''):
     # Прізвище та ініціали
     group_data['BossFIO'] = user_data.get('BossFIO')
     # Напрям підготовки
-    group_data['NapramPidg'] = user_data.get('StudyGroupName', '') + ' ' + \
-                               user_data.get('SpecialityName', '')
+    group_data['NapramPidg'] = user_data.get('StudyGroupName', '') + ' ' + user_data.get('SpecialityName', '')
 
     # 31.12.2018 0:00:00
     datetime_object = datetime.datetime.strptime(user_data.get('GraduateDate'), '%d.%m.%Y %H:%M:%S')
@@ -128,8 +129,7 @@ def fill_group_data(user=None, dip_type=''):
     # Прізвище та ініціали
     group_data['BossFIOEn'] = user_data.get('BossFIOEn')
     # Напрям підготовки
-    group_data['NapramPidgEn'] = user_data.get('StudyGroupName', '') + ' ' + \
-                                 user_data.get('SpecialityNameEn', '')
+    group_data['NapramPidgEn'] = user_data.get('StudyGroupName', '') + ' ' + user_data.get('SpecialityNameEn', '')
 
     return group_data
 
@@ -182,6 +182,7 @@ def check():
         'file_name': filename,
         'dip_type': request.form.get('dip-type'),
         'study_group_name': study_group_name,
+        'is_duplicate': request.form.get('is_duplicate'),
     }
 
     resp = make_response(render_template('check.html', data=data))
@@ -196,16 +197,17 @@ def create_diplomas():
     group_data = dict(request.form)
     file_name = request.form.get('file-name', '')
     diploma_type = request.form.get('dip-type', '')
-
+    is_duplicate = True if request.form.get('is_duplicate', '') == 'on' else False
     users = read_users_data_from_xml(file_name)
 
     folder_name = request.form.get('study_group_name', 'Невідома група')
 
     full_folder_name = os.path.join('generated', folder_name)
+    os.makedirs(full_folder_name, exist_ok=True)
 
     for user in users:
         user.update(group_data)
-        create_diploma_for_user(full_folder_name, dict(user), diploma_type)
+        create_diploma_for_user(full_folder_name, dict(user), diploma_type, is_duplicate)
 
     shutil.make_archive(full_folder_name, 'zip', full_folder_name)
 

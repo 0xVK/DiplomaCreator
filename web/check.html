@@ -15,6 +15,7 @@
 <form class="check-dipl-form" action="/create_diplomas" method="post">
  <input type="hidden" name="file-name" value="{{ data.file_name }}">
  <input type="hidden" name="dip-type" value="{{ data.dip_type }}">
+ <input type="hidden" name="is_duplicate" value="{{ data.is_duplicate }}">
  <input type="hidden" class="form-control" id="StupinEn" value="{{ data.group_data.StupinEn }}" name="StupinEn">
  <input type="hidden" class="form-control" id="Stupin" value="{{ data.group_data.Stupin }}" name="Stupin">
  <div class="row">
@@ -35,7 +36,7 @@
         <input type="text" class="form-control" id="NapramValue" value="{{ data.group_data.NapramPidg }}" name="NapramPidg">
       </div>
       {% endif %}
-      {% if data.dip_type == 'type-3' or data.dip_type == 'type-4' or data.dip_type == 'type-5' or data.dip_type == 'type-6' %}
+      {% if data.dip_type == 'type-3' or data.dip_type == 'type-4' or data.dip_type == 'type-5' or data.dip_type == 'type-6' or data.dip_type == 'type-7'%}
       <div class="form-group">  
         <label for="SpecialityNameInput">Спеціальність</label>
         <input type="text" class="form-control" id="SpecialityNameInput" value="{{ data.group_data.SpecialityName }}" name="SpecialityName">
@@ -88,7 +89,7 @@
             <input type="text" class="form-control" id="NapramValueEn" value="{{ data.group_data.NapramPidgEn }}" name="NapramPidgEn">
           </div>
           {% endif %}
-          {% if data.dip_type == 'type-3' or data.dip_type == 'type-4' or data.dip_type == 'type-5' or data.dip_type == 'type-6' %}
+          {% if data.dip_type == 'type-3' or data.dip_type == 'type-4' or data.dip_type == 'type-5' or data.dip_type == 'type-6' or data.dip_type == 'type-7' %}
           <div class="form-group">  
             <label for="SpecialityNameInputEn">Спеціальність</label>
             <input type="text" class="form-control" id="SpecialityNameInputEn" value="{{ data.group_data.SpecialityNameEn }}" name="SpecialityNameEn">
