@@ -7,9 +7,9 @@ import datetime
 import shutil
 from flask import Flask, request, render_template, send_file, redirect, make_response
 import config
+import random
 
 app = Flask(__name__, template_folder='web', static_folder='web', static_url_path='/static')
-
 
 def create_diploma_for_user(group_folder, user=None, diploma_type=None, duplicate=False):
 
@@ -25,6 +25,7 @@ def create_diploma_for_user(group_folder, user=None, diploma_type=None, duplicat
     user['zakinchyv'] = end_str.format(year_of_issue_date)
 
     user['zdobuv'] = 'здобула' if user.get('SexId') == '2' else 'здобув'
+    user['otrymav'] = 'отримала' if user.get('SexId') == '2' else 'отримав'
 
     user['vidznaka'] = user.get('AwardTypeId') == '3'
 
@@ -131,6 +132,10 @@ def fill_group_data(user=None, dip_type=''):
     # Напрям підготовки
     group_data['NapramPidgEn'] = user_data.get('StudyGroupName', '') + ' ' + user_data.get('SpecialityNameEn', '')
 
+    for key in group_data.keys():
+        if type(group_data[key]) == str:
+            group_data[key] = group_data[key].strip()
+
     return group_data
 
 
@@ -200,7 +205,7 @@ def create_diplomas():
     is_duplicate = True if request.form.get('is_duplicate', '') == 'on' else False
     users = read_users_data_from_xml(file_name)
 
-    folder_name = request.form.get('study_group_name', 'Невідома група')
+    folder_name = request.form.get('study_group_name', 'Невідома_група') + '_' + str(random.randint(1, 1000))
 
     full_folder_name = os.path.join('generated', folder_name)
     os.makedirs(full_folder_name, exist_ok=True)
@@ -232,10 +237,8 @@ def delete(filename):
 
     return redirect('/archive')
 
+os.makedirs('tmp', exist_ok=True)
+os.makedirs('generated', exist_ok=True)
 
 if __name__ == '__main__':
-
-    os.makedirs('tmp', exist_ok=True)
-    os.makedirs('generated', exist_ok=True)
-
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host='0.0.0.0', debug=True, port=8080)

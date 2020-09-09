@@ -1,3 +1,4 @@
 docxtpl
 xmltodict
 flask
+gunicorn
