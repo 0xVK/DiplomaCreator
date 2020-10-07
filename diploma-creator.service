@@ -1,0 +1,18 @@
+[Unit]
+Description=Diploma Creator instance
+After=network.target
+
+[Service]
+User=vitaliy
+Group=vitaliy
+WorkingDirectory=/home/vitaliy/Documents/DiplomaCreator
+ExecStart=/home/vitaliy/Documents/DiplomaCreator/venv/bin/gunicorn \
+--workers 1 \
+--bind 0.0.0.0:8080 \
+--umask 007 \
+--access-logfile /home/vitaliy/Documents/DiplomaCreator/gunicorn-access.log \
+--error-logfile /home/vitaliy/Documents/DiplomaCreator/gunicorn-error.log \
+wsgi:app
+
+[Install]
+WantedBy=multi-user.target
